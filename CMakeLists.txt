@@ -48,19 +48,19 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
- add_message_files(
-   FILES
-   Num.msg
- )
+ #add_message_files(
+  # FILES
+  # Num.msg
+ #)
 
 
 ## Generate services in the 'srv' folder
- add_service_files(
-   FILES
-   AddTwoInts.srv
+# add_service_files(
+ #  FILES
+#   AddTwoInts.srv
  #  Service2.srv
- )
-generate_messages()
+ #)
+#generate_messages()
 ## Generate actions in the 'action' folder
 # add_action_files(
 #   FILES
@@ -206,3 +206,13 @@ target_link_libraries(talker ${catkin_LIBRARIES})
 
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
+
+
+add_executable(start src/start.cpp)
+target_link_libraries(start ${catkin_LIBRARIES})
+add_dependencies(start beginner_tutorials_gencpp)
+
+
+add_executable(stop src/stop.cpp)
+target_link_libraries(stop ${catkin_LIBRARIES})
+add_dependencies(start beginner_tutorials_gencpp)
