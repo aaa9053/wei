@@ -207,6 +207,10 @@ target_link_libraries(talker ${catkin_LIBRARIES})
 add_executable(listener src/listener.cpp)
 target_link_libraries(listener ${catkin_LIBRARIES})
 
+add_executable(sound_talker src/sound_talker.cpp)
+target_link_libraries(sound_talker ${catkin_LIBRARIES})
+
+
 
 add_executable(start src/start.cpp)
 target_link_libraries(start ${catkin_LIBRARIES})
