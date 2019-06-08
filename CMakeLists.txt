@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 2.8.3)
+<<<<<<< HEAD
 project(homework)
+=======
+project(beginner_tutorials)
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -11,6 +15,10 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
+<<<<<<< HEAD
+=======
+  message_generation
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 )
 
 ## System dependencies are found with CMake's conventions
@@ -47,6 +55,7 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
+<<<<<<< HEAD
 # add_message_files(
 #   FILES
 #   Message1.msg
@@ -60,6 +69,21 @@ find_package(catkin REQUIRED COMPONENTS
 #   Service2.srv
 # )
 
+=======
+ #add_message_files(
+  # FILES
+  # Num.msg
+ #)
+
+
+## Generate services in the 'srv' folder
+# add_service_files(
+ #  FILES
+#   AddTwoInts.srv
+ #  Service2.srv
+ #)
+#generate_messages()
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 ## Generate actions in the 'action' folder
 # add_action_files(
 #   FILES
@@ -103,10 +127,18 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
+<<<<<<< HEAD
   INCLUDE_DIRS include
 #  LIBRARIES homework
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
+=======
+#  INCLUDE_DIRS include
+#  LIBRARIES beginner_tutorials
+#  CATKIN_DEPENDS roscpp rospy std_msgs
+#  DEPENDS system_lib
+ CATKIN_DEPENDS message_runtime
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 )
 
 ###########
@@ -116,13 +148,21 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
+<<<<<<< HEAD
  include
+=======
+# include
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
   ${catkin_INCLUDE_DIRS}
 )
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
+<<<<<<< HEAD
 #   src/${PROJECT_NAME}/homework.cpp
+=======
+#   src/${PROJECT_NAME}/beginner_tutorials.cpp
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 # )
 
 ## Add cmake target dependencies of the library
@@ -133,7 +173,11 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
+<<<<<<< HEAD
 # add_executable(${PROJECT_NAME}_node src/homework_node.cpp)
+=======
+# add_executable(${PROJECT_NAME}_node src/beginner_tutorials_node.cpp)
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -190,13 +234,18 @@ include_directories(
 #############
 
 ## Add gtest based cpp test target and link libraries
+<<<<<<< HEAD
 # catkin_add_gtest(${PROJECT_NAME}-test test/test_homework.cpp)
+=======
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_beginner_tutorials.cpp)
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+<<<<<<< HEAD
 
 add_executable(follow src/follow.cpp)
 target_link_libraries(follow ${catkin_LIBRARIES})
@@ -206,3 +255,26 @@ target_link_libraries(
    tuling
    ${catkin_LIBRARIES} -lcurl -ljsoncpp
 )
+=======
+include_directories(include ${catkin_INCLUDE_DIRS})
+
+add_executable(talker src/talker.cpp)
+target_link_libraries(talker ${catkin_LIBRARIES})
+
+add_executable(listener src/listener.cpp)
+target_link_libraries(listener ${catkin_LIBRARIES})
+
+add_executable(sound_talker src/sound_talker.cpp)
+target_link_libraries(sound_talker ${catkin_LIBRARIES})
+
+
+
+add_executable(start src/start.cpp)
+target_link_libraries(start ${catkin_LIBRARIES})
+add_dependencies(start beginner_tutorials_gencpp)
+
+
+add_executable(stop src/stop.cpp)
+target_link_libraries(stop ${catkin_LIBRARIES})
+add_dependencies(start beginner_tutorials_gencpp)
+>>>>>>> 6c5d95b426591f8129e2cad39734e7a8aac9ea58

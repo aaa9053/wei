@@ -3,6 +3,9 @@
   <name>homework</name>
   <version>0.0.0</version>
   <description>The homework package</description>
+  <name>beginner_tutorials</name>
+  <version>0.0.0</version>
+  <description>The beginner_tutorials package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->
@@ -20,6 +23,7 @@
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
   <!-- <url type="website">http://wiki.ros.org/homework</url> -->
+  <!-- <url type="website">http://wiki.ros.org/beginner_tutorials</url> -->
 
 
   <!-- Author tags are optional, multiple are allowed, one per tag -->
@@ -58,7 +62,9 @@
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
-
+  <build_export_depend>message_generation</build_export_depend>
+  <build_export_depend>message_runtime</build_export_depend>
+ 
   <!-- The export tag contains other, unspecified, tags -->
   <export>
     <!-- Other tools can request additional information be placed here -->
